@@ -3,7 +3,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>GET方式建立一个连接</title>
+    <title>POST方式建立一个连接</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
    <!--定义XMLHttpRequest对象 固定版本-->
     <script type="text/javascript">
@@ -39,8 +39,9 @@
             var inputBtn=document.getElementById('t1');
             /*通过函数对象的性质，可以很方便的将一个函数赋值给一个变量或者将函数作为参数传递，下面为大家介绍下函数的使用语法avascript 函数不同于其他的语言，每个函数都是作为一个对象被维护和运行的。通过函数对象的性质，可以很方便的将一个函数赋值给一个变量或者将函数作为参数传递。*/
             inputBtn.onclick=function(){ //绑定click事件类型
-                xmlhttprequest.open("GET","responseb.php",false);//调用XMLHttpRequest对象的open()方法，打开与服务器之间的异步通信连接
-                xmlhttprequest.send(null);//发送请求，前面的只是设置，这才是真正的发送。
+                xmlhttprequest.open("POST","response.php",false);//调用XMLHttpRequest对象的open()方法，打开与服务器之间的异步通信连接
+                xmlhttprequest.setRequestHeader('content-type','application/x-www-form-urlencorded');//表示的为传递的表单值，用post方法必须设置，否则服务器无法识别上传的数据
+                xmlhttprequest.send(name=wanjia);//发送请求，前面的只是设置，这才是真正的发送。
                 alert("来自服务器文件RESPONSE反馈的信息"+xmlhttprequest.responseText);
              /*下面这两个语句是显示返回页面的所有内容，语句是成功的，但是代码在此不能成功显示出来*/
                 var msg=document.getElementById('p_id');
