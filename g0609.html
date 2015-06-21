@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+        <!--测试AJAX PHP  通信-->
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>表单的预处理字符串serialize()方法</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="jquery/jquery-2.1.1.min.js"></script>
+    <!--bootstrap 的js插件-->
+    <script src="js/bootstrap.min.js"></script>
+   <!--定义XMLHttpRequest对象 固定版本-->
+    <script type="text/javascript">
+
+        //定义XMLHttpRequest对象
+
+        if(window.XMLHttpRequest){
+            var xmlhttprequest = new XMLHttpRequest();
+        }
+        else if (window.ActiveXObject){	//兼容IE浏览器
+            try{
+                var xmlhttprequest = new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            catch (e){
+                try{
+                    xmlhttprequest = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                catch (e)
+                { }
+            }
+        }
+
+      $(function(){
+         $("#submit").click(function(){
+             $("#p_id").html($("form").serialize());//获取格式化表单的请求字符串信息，并显示出来
+             return false;//禁止提交表单
+         })
+      })
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2" id="left">
+            <form action="#" method="post">
+               <fieldset>
+                   <div class="form-group">
+                       <label>姓名:</label>
+                       <input type="text" class="text-center" id="user" name="user">
+                   </div>
+                   <div class="radio">
+                       <label>
+                           <input type="radio" name="sex" value="man" checked>男
+                       </label>
+                       <label>
+                           <input type="radio" name="sex" value="men">女
+                       </label>
+                       <!--普通下拉菜单 年级-->
+                       <div class="row">
+                         <label class="text-info ">年级:</label>
+                           <select name="grade">
+                               <option value="1">一年级</option>
+                               <option value="2">二年级</option>
+                               <option value="3">三年级</option>
+                           </select>
+                           </div>
+                        <!--科目-->
+                       <div class="row">
+                           <label class="text-info ">科目:</label>
+                           <select multiple="multiple" name="kemu">
+                               <option value="yuwen">语文</option>
+                               <option value="shuxue">数学</option>
+                               <option value="yingyu">英语</option>
+                               <option value="wuli">物理</option>
+                               <option value="huaxue">化学</option>
+                           </select>
+                       </div>
+                       <div class="checkbox">
+                           <div class="row"><label>兴趣:</label></div>
+                           <label><input type="checkbox" name="love" value="yundong">运动</label>
+                           <label><input type="checkbox" name="love" value="wenyi">文艺</label>
+                           <label><input type="checkbox" name="love" value="yingyue">音乐</label>
+                           <label><input type="checkbox" name="love" value="meishu">美术</label>
+                           <label><input type="checkbox" name="love" value="youxi">游戏</label>
+                       </div>
+                   </div>
+                   <div class="row">
+                       <input class="btn btn-primary btn-lg" type="submit" value="提交" id="submit" >
+                   </div>
+
+               </fieldset>
+            </form>
+        </div>
+        <div class="col-md-3" id="right">
+            <div class="col-md-12" id="right_up">
+                <p id="p_id" class="text-center"><h2></h2></p>
+            </div>
+        <!--    <div class="col-md-12" id="right_down">
+                <h3>我就是被载入的网页</h3>
+                   <span></span>
+            </div>-->
+
+            <div class="col-md-12 text-left" id="right_down">
+                <!--载入静态页面成功执行成功-->
+                <span id="span1" class="text-right"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+<!--<script src="jquery/jquery-2.1.1.min.js"></script>
+&lt;!&ndash;bootstrap 的js插件&ndash;&gt;
+<script src="js/bootstrap.min.js"></script>-->
+</body>
+</html>
