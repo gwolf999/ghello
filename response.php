@@ -2,8 +2,8 @@
 if(!empty($_GET['name']))
 {
     $name=trim($_GET['name']);
-    if($name=='wanjia'){
-        echo 'welcome '.$name.'!';
+    if($name=='wanjia'and $pass='123456'){
+        echo '姓名:'.$name.'  口令:'.$pass.'  年龄:'.$age;
     }elseif($name=='嘉美'){
         echo 'welcome '.$name.'!';
     }elseif($name=='花名册'){
