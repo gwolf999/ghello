@@ -36,7 +36,7 @@
         window.onload = function(){}与(function(){}) 这两个 1-区别: window.onload 算 事件 function(){}很平常的一个函数,外加一个()实际返回的就是一个匿名函数对象. 2-那个比较好,这个问题不存在~!因为这是2个不同的用途~! window.onload这个表示网页加载完执行后面的那个函数,而一般形式定义的普通函数,只要常规调用就行了. 记住:函数: 是对象-有属性有方法, 是数据-可传进任何函数当数据使用  也是作用域---函数就是限制作用域的一段代码集合,js的作用域是相当于其他程序块级作用域~!(个人总结)*/
 $(function(){
     $("input").click(function(){
-        $.post("response.php",{name="wanjia",pass:123456,age=3},function(data){
+        $.post("response.php",{name:"wanjia",pass:123456,age:3},function(data){
             alert("POST的jQuery读取的信息是:"+data);
         });
     });
