@@ -50,7 +50,8 @@
                   type: "POST",
                   data: "name=wanjia&pass=12345a&age=3",
                   success: function(data) {
-                 $("#right_down").append(data);
+                 $("#right_down").append(data);//append方法在被选元素的结尾（仍然在内部）插入指定内容
+                     // $("#right_down").load(data); //error，load方法本身就是可以加载php页面及传递参数，不需要$.ajax
                       $("#span1").html(data);//这个也成功了，不容易
                   }
               });
@@ -73,9 +74,9 @@
                    <span></span>
             </div>-->
 
-            <div class="col-md-12" id="right_down">
+            <div class="col-md-12 text-left" id="right_down">
                 <!--载入静态页面成功执行成功-->
-                <span id="span1"></span>
+                <span id="span1" class="text-right"></span>
             </div>
         </div>
     </div>
