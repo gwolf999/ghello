@@ -3,10 +3,14 @@ if(!empty($_POST['name']))
 {
     $name=trim($_POST['name']);
     $pass=$_POST['pass'];
-    if($name=='wanjia'and $pass=='123456'){
-        echo '姓名:'.$name.'  口令:'.$_POST['pass'].'  年龄:'.$_POST['age'];
+    if($name=='wanjia'and $pass==123456){
+      //  echo '姓名:'.$name.'  口令:'.$_POST['pass'].'  年龄:'.$_POST['age'];
+        require_once('onload.html');//ok
     }elseif($name=='wanjia'){
-        echo '用户名正确，但密码不对';
+      echo '用户名正确，但密码不对';//ok
+        $tmp='我可以进来吗？';
+
+        require_once('onload.php');
     }
     elseif($name=='嘉美'){
         echo 'welcome '.$name.'!';

@@ -46,13 +46,14 @@
             $("span").html(data);
             });*/
             $.ajax({
-                  url: "onload.html",
+                  url: "response_post.php",
                   type: "POST",
-                  data: "name=wanjia&pss=1234567&age=3",
+                  data: "name=wanjia&pass=12345a&age=3",
                   success: function(data) {
                  $("#right_down").append(data);
+                      $("#span1").html(data);//这个也成功了，不容易
                   }
-              })
+              });
           });
         })
     </script>
@@ -74,6 +75,7 @@
 
             <div class="col-md-12" id="right_down">
                 <!--载入静态页面成功执行成功-->
+                <span id="span1"></span>
             </div>
         </div>
     </div>
